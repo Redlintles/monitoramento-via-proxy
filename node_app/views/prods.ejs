@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products List</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/edit.js" defer></script>
+</head>
+<body>
+    <%- include("./includes/header.ejs") %>
+    <h1>Lista de Produtos</h1>
+    <a href="/">Voltar para a página inicial</a>
+    <main>
+        <% for(let prod of products) { %>
+            <div class="product">
+                <h1><%= prod.name %></h1>
+                <% if(!less) { %>
+                    <p><%= prod.desc %></p>
+                    <p><%= prod.category %></p>
+                    <p><%= prod.seller %></p>
+                    <p><%= prod.price %></p>
+                    <p><%= prod.stars %></p>
+                <% } %>
+                <p><%= prod["add-date"] %></p>
+                <a href="/products/delete/<%= prod.id %>">Excluir Produto</a>
+                <%- include("./includes/editProduct.ejs",{prod}) %>
+            </div>
+        <% } %>
+    </main>
+    <%- include("./includes/footer.ejs") %>
+
+
+    
+    
+    
+</body>
+</html>

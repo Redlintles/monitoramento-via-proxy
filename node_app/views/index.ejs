@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include("./includes/header.ejs") %>
+    <main>
+        <div>
+            <h1>Adicione um novo produto</h1>
+            <form action="/products/add" method="post">
+                <label>
+                    <span>Nome: </span>
+                    <input type="text" name="name" placeholder="Nome do produto">
+                </label>
+                <label>
+                    <span>Descrição: </span>
+                    <textarea name="desc" placeholder="Descrição do produto"></textarea>
+                </label>
+                <label>
+                    <span>Categoria: </span>
+                    <input type="text" name="category" placeholder="Categoria do produto">
+                </label>
+                <label>
+                    <span>Preço: </span>
+                    <input type="text" name="price" placeholder="Categoria do produto" pattern="^\$\d+\.\d{2}$">
+                </label>
+                <label>
+                    <span>Autor: </span>
+                    <input type="text" name="seller" placeholder="Nome do vendedor">
+                </label>
+                <label>
+                    <span>Estrelas: </span>
+                    <input type="number" name="stars" min="0" max="5" placeholder="Nota">
+                </label>
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+        <div>
+            <a href="/products/list">Ver lista de Produtos</a>
+            <a href="/products/list?less">Ver lista de produtos resumida</a>
+        </div>
+    </main>
+    <%- include("./includes/footer.ejs") %>
+</body>
+</html>

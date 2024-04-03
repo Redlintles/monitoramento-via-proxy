@@ -1,0 +1,30 @@
+<div class="edit-form">
+    <button class="edit-form__toggler">Editar Produto</button>
+    <form action="/products/edit/<%= prod.id %>" method="post" class="edit-form__form hidden">
+        <label>
+            <span>Nome: </span>
+            <input type="text" name="name" placeholder="Nome do produto" value="<%= prod.name %>">
+        </label>
+        <label>
+            <span>Descrição: </span>
+            <textarea name="desc" placeholder="Descrição do produto"><%= prod.desc %></textarea>
+        </label>
+        <label>
+            <span>Categoria: </span>
+            <input type="text" name="category" placeholder="Categoria do produto" value="<%= prod.category %>">
+        </label>
+        <label>
+            <span>Preço: </span>
+            <input type="text" name="price" placeholder="Preço do produto" pattern="^\$\d+\.\d{2}$" value="<%= prod.price %>">
+        </label>
+        <label>
+            <span>Autor: </span>
+            <input type="text" name="seller" placeholder="Nome do vendedor" value="<%= prod.seller %>">
+        </label>
+        <label>
+            <span>Estrelas: </span>
+            <input type="number" name="stars" min="0" max="5" placeholder="Nota" value="<%= prod.stars %>">
+        </label>
+        <button type="submit">Editar</button>
+    </form>
+</div>
