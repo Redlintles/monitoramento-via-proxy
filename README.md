@@ -31,6 +31,13 @@ Você deve ver a aplicação rodando.
 
 Agora para rodar o proxy, abra outra janela do terminal na pasta proxy, lá você deve rodar o comando:
 
+O Proxy usa o módulo requests, que é uma biblioteca externa, que pode ser instalada com:
+Sem ele, a aplicação não poderá rodar.
+
+```bash
+  pip install requests
+```
+
 ```bash
   python proxy.py
 ```
